@@ -6,14 +6,15 @@
 
     <div class="blogs content">
       <h2>All Blogs</h2>
-      <% if (blogs.length > 0)  { %>
-        <% blogs.forEach(blog => { %>
-          <a class="single" href="/blogs/<%= blog._id %>">
-            
+      <% if (spaces.length > 0)  { %>
+        <% spaces.forEach(blog => { %>
+          <a class="single" href="/spaces/<%= spaces._id %>">
+            <h3><%= spaces.title %></h3>
+            <p><%=spaces.category %></p>
           </a>
         <% }); %>
       <% } else { %>
-        <h3>No blogs availible</h3>
+        <h3>We couldn't find any Spaces.</h3>
       <% } %>
     </div>
     <%- include('../partials/footer.ejs') %>

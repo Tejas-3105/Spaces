@@ -3,7 +3,7 @@ body {
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
-  font-family: "Noto Serif", serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   max-width: 1200px;
 }
 p,
@@ -15,12 +15,13 @@ ul {
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: #222;
+  color: #ffffff;
   transition: 0.3s ease;
 }
 a.links:hover {
-  color: crimson;
-  text-shadow: 1px 1px 2px black;
+  color: rgb(200, 223, 255);
+  text-shadow: 1px 1px 2px rgb(254, 249, 249);
+  transform: translate(5px, -5px);
 }
 
 /* nav & footer styles */
@@ -30,7 +31,6 @@ nav {
   margin-bottom: 60px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
-  text-transform: uppercase;
 }
 nav ul {
   display: flex;
@@ -46,11 +46,11 @@ nav h1 {
 }
 nav p,
 nav a {
-  color: #777;
+  color: #ffffff;
   font-weight: 300;
 }
 footer {
-  color: #777;
+  color: #ffffff;
   text-align: center;
   margin: 80px auto 20px;
 }
@@ -58,11 +58,14 @@ h2 {
   margin-bottom: 40px;
 }
 h3 {
-  text-transform: capitalize;
   margin-bottom: 8px;
 }
 .content {
   margin-left: 20px;
+}
+
+.links {
+  margin-inline: auto;
 }
 
 /* index styles */
@@ -70,10 +73,10 @@ h3 {
   display: block;
   margin: 40px 0;
   padding-left: 30px;
-  border-left: 6px solid crimson;
+  border-left: 6px solid rgb(255, 255, 255);
 }
 .blogs a:hover h3 {
-  color: crimson !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 /* details styles */
@@ -90,7 +93,7 @@ h3 {
 
 .delete:hover {
   cursor: pointer;
-  box-shadow: 1px 2px 3px crimson;
+  box-shadow: 1px 2px 3px rgb(255, 255, 255);
 }
 
 /* create styles */
@@ -115,7 +118,7 @@ textarea {
 .create-blog button {
   margin-top: 20px;
   background: crimson;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 6px;
   border: 0;
   font-size: 1.2em;
@@ -126,7 +129,19 @@ textarea {
   display: block;
   margin: 0 auto;
   border-radius: 8px;
-  border: 2px solid black !important;
+  border: 2px solid rgb(255, 255, 255) !important;
   font-family: "Noto Serif", serif;
   font-size: 16px !important;
+}
+
+html {
+    background-color: rgb(0, 26, 49);
+    background-image: linear-gradient(to bottom, transparent, 30%, rgb(0, 26, 49)), url(starnight.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+body {
+  margin-inline: auto;
 }
