@@ -8,11 +8,39 @@ const spaceSchema = new Schema(
       type: String,
       required: true,
     },
-    snippet: {
+    description: {
       type: String,
       required: true,
     },
-    body: {
+    category: {
+      type: String,
+      required: true,
+    },
+    nearestBuilding: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: true,
+    },
+    outlets: {
+      type: String,
+      required: true,
+    },
+    capacity: {
+      type: String,
+      required: true,
+    },
+    peak: {
+      type: String, // Only allow a single selection
+      required: true,
+    },
+    time1: {
+      type: String,
+      required: true,
+    },
+    time2: {
       type: String,
       required: true,
     },

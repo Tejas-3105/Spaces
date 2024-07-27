@@ -6,6 +6,15 @@
 
     <div class="blogs content">
       <h2>All Blogs</h2>
+      <% if (blogs.length > 0)  { %>
+        <% blogs.forEach(blog => { %>
+          <a class="single" href="/blogs/<%= blog._id %>">
+            
+          </a>
+        <% }); %>
+      <% } else { %>
+        <h3>No blogs availible</h3>
+      <% } %>
     </div>
     <%- include('../partials/footer.ejs') %>
   </body>

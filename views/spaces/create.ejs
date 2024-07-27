@@ -5,14 +5,55 @@
     <%- include('../partials/nav.ejs') %>
 
     <div class="create-blog content">
-      <h2 align="center">Create a New Blog</h2>
+      <h2 align="center">Create a New Space</h2>
       <form action="/spaces" method="POST">
-        <label for="title">Blog title:</label>
+        <label for="title">Space Title:</label>
         <input type="text" id="title" name="title" required />
-        <label for="snippet">Blog snippet:</label>
-        <input type="text" id="snippet" name="snippet" required />
-        <label for="body">Blog body:</label>
-        <textarea id="body" name="body" required></textarea>
+
+        <label for="category">Category</label>
+        <select name="category" id="category" required>
+          <option value="Study Space">Study Space</option>
+          <option value="Recreational">Recreational</option>
+          <option value="Professional">Professional</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="nearestBuilding">Nearest Building:</label>
+        <input type="text" id="nearestBuilding" name="nearestBuilding" required />
+
+        <label for="type">Indoors or Outdoors</label>
+        <select name="type" id="type" required>
+          <option value="Indoors">Indoors</option>
+          <option value="Outdoors">Outdoors</option>
+        </select>
+
+        <label for="outlets">Availability of Outlets</label>
+        <select name="outlets" id="outlets" multiple required>
+          <option value="Plenty">Plenty</option>
+          <option value="Many">Many</option>
+          <option value="Limited">Limited</option>
+          <option value="None">None</option>
+        </select>
+
+        <label for="capacity">Capacity</label>
+        <select name="capacity" id="capacity" required>
+          <option value="1-2">1-2</option>
+          <option value="3-5">3-5</option>
+          <option value="5-8">5-8</option>
+          <option value="10+">10+</option>
+        </select>
+
+        <label for="peak">Peak Times</label>
+        <select name="peak" id="peak" multiple required>
+          <option value="Weekdays">Weekdays</option>
+          <option value="Weekends">Weekends</option>
+        </select>
+
+        <input type="time" id="time1" name="time1" /> to
+        <input type="time" id="time2" name="time2" />
+
         <button class="submit">Submit</button>
       </form>
     </div>
