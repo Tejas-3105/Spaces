@@ -5,12 +5,12 @@
     <%- include('../partials/nav.ejs') %>
 
     <div class="blogs content">
-      <h2>All Blogs</h2>
+      <h2>All Spaces</h2>
       <% if (spaces.length > 0)  { %>
-        <% spaces.forEach(blog => { %>
-          <a class="single" href="/spaces/<%= spaces._id %>">
-            <h3><%= spaces.title %></h3>
-            <p><%=spaces.category %></p>
+        <% spaces.forEach(space => { %>
+          <a class="single" href="/spaces/<%= space._id %>">
+            <h3><%= space.title %></h3>
+            <p><%=space.category %></p>
           </a>
         <% }); %>
       <% } else { %>

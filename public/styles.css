@@ -1,147 +1,185 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+
+html {
+  background-color: rgb(0, 26, 49);
+  background-image: linear-gradient(to bottom, transparent 30%, rgb(0, 26, 49)), url('starnight.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  max-width: 1200px;
+  color: #ffffff;
 }
-p,
-h1,
-h2,
-h3,
-a,
-ul {
+
+p, h1, h2, h3, a, ul {
   margin: 0;
   padding: 0;
   text-decoration: none;
   color: #ffffff;
   transition: 0.3s ease;
 }
+
 a.links:hover {
   color: rgb(200, 223, 255);
   text-shadow: 1px 1px 2px rgb(254, 249, 249);
   transform: translate(5px, -5px);
 }
 
-/* nav & footer styles */
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 60px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
 }
+
+.site-title a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.mainer-logo {
+  margin-right: 10px;
+}
+
 nav ul {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
 nav li {
-  list-style-type: none;
   margin-left: 20px;
 }
+
 nav h1 {
   font-size: 3em;
 }
-nav p,
+
 nav a {
   color: #ffffff;
   font-weight: 300;
 }
+
 footer {
   color: #ffffff;
   text-align: center;
   margin: 80px auto 20px;
 }
+
 h2 {
   margin-bottom: 40px;
+  text-align: center;
 }
+
 h3 {
   margin-bottom: 8px;
 }
+
 .content {
   margin-left: 20px;
 }
 
-.links {
-  margin-inline: auto;
-}
-
-/* index styles */
-.blogs a {
-  display: block;
-  margin: 40px 0;
-  padding-left: 30px;
-  border-left: 6px solid rgb(255, 255, 255);
-}
-.blogs a:hover h3 {
-  color: rgb(255, 255, 255) !important;
-}
-
-/* details styles */
-.details {
-  position: relative;
-}
-.delete {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 50%;
-  padding: 8px;
-}
-
-.delete:hover {
-  cursor: pointer;
-  box-shadow: 1px 2px 3px rgb(255, 255, 255);
-}
-
-/* create styles */
-.create-blog form {
-  max-width: 400px;
+.create-space form {
+  max-width: 600px;
   margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
 }
-.create-blog input,
-.create-blog textarea {
+
+.create-space form:hover {
+  box-shadow: 3px 3px 6px rgba(255, 255, 255, 0.1);
+}
+
+.create-space input, .create-space textarea, .create-space select {
   display: block;
   width: 100%;
   margin: 10px 0;
   padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
 }
-.create-blog label {
+
+.create-space label {
   display: block;
   margin-top: 24px;
+  font-weight: bold;
 }
+
 textarea {
   height: 120px;
 }
-.create-blog button {
+
+.create-space button {
   margin-top: 20px;
-  background: crimson;
-  color: rgb(255, 255, 255);
-  padding: 6px;
-  border: 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
   font-size: 1.2em;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.create-space button:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .submit {
   display: block;
   margin: 0 auto;
   border-radius: 8px;
-  border: 2px solid rgb(255, 255, 255) !important;
+  border: 2px solid #ffffff;
   font-family: "Noto Serif", serif;
-  font-size: 16px !important;
+  font-size: 16px;
+  padding: 10px 20px;
 }
 
-html {
-    background-color: rgb(0, 26, 49);
-    background-image: linear-gradient(to bottom, transparent, 30%, rgb(0, 26, 49)), url(starnight.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+option {
+  color: #ffffff;
 }
 
+select {
+  background-color: black;
+}
 
-body {
-  margin-inline: auto;
+.whitelabel {
+  color: black;
+}
+
+.submit {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  background: crimson;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.submit:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 1);
 }
