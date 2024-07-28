@@ -4,7 +4,8 @@
     <%- include('../partials/nav.ejs') %>
 
     <div class="spaces content">
-      <h2><%= spaces.title %></h2>
+      <h1 align="center">Space Details</h1>
+      <h2 align="left"><%= spaces.title %></h2>
       <p> Category: <%= spaces.category %></p> <br>
       <p> Description: <br> <%= spaces.description %></p> <br>
       <p> Nearest Building: <%= spaces.nearestBuilding %></p> <br>
@@ -15,6 +16,13 @@
       
       <button id="delete" data-doc="<%= spaces._id %>">Delete</button>
     </div>
+  </div>
+  <div class="bg-animation">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div id="stars4"></div>
+</div>
     <%- include('../partials/footer.ejs') %>
   </body>
   <script>

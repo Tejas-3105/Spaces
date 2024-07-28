@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const spaceRoutes = require("./routes/spaceRoutes");
 const bodyParser = require("body-parser");
 const multer = require("multer");
+const Space = require("./models/space");
 
 // express app
 const app = express();
@@ -19,6 +20,15 @@ mongoose
       console.log("Server is running on port 3000");
     });
     console.log("Connected to DB");
+      console.log(JSON.stringify(result, null, 2));
+      console.log(JSON.stringify(result, null, 2));
+    Space.find({}, { img: 0 }).lean()
+    .then(result => {
+      console.log(JSON.stringify(result, null, 2));
+    })
+    .catch(err => {
+      console.log(err);
+    })
   })
   .catch((err) => console.log(err));
 
