@@ -10,7 +10,7 @@
       <% spaces.forEach(space => { %>
         <div class="space-section">
           <a class="links" href="/spaces/<%= space._id %>">
-            <h3 class="space-title"><%= space.title %></h3>
+            <h2 style="text-align: left; margin-bottom: 5px;" class="space-title"><%= space.title %></h2>
             <p class="space-category"><%=space.category %></p>
             <img src="<%= space.img.data %>" alt="<%= space.title %> image">
           </a>
