@@ -2,13 +2,13 @@
   <%- include('../partials/head.ejs') %>
   <body>
     <%- include('../partials/nav.ejs') %>
-
-    <div class="spaces content">
+    <div class="spaces-content">
       <h1 align="center">Details about the Space</h1>
       <br />
       <h2 id="spaces-title"><%= spaces.title %></h2>
       <p>Category: <%= spaces.category %></p>
       <br />
+      <div class="details-container">
       <p>
         Description: <br />
         <%= spaces.description %>
@@ -27,8 +27,13 @@
         spaces.time2 %>
       </p>
       <br />
+      </div>
 
-      <button id="delete" data-doc="<%= spaces._id %>">Delete</button>
+      
+      <div class="details-img">
+      <img class="home-photo-detail" src="<%= spaces.img.data %>" alt="<%= spaces.title %> image">
+      </div>
+      </div>
 
       <div style="margin-top: 20px">
         <button
@@ -142,4 +147,10 @@
       }
     });
   </script>
+  <div class="bg-animation">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div id="stars4"></div>
+</div>
 </html>

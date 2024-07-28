@@ -5,13 +5,12 @@ const spaceRoutes = require("./routes/spaceRoutes");
 const bodyParser = require("body-parser");
 const multer = require("multer");
 const Space = require("./models/space");
-
 // express app
 const app = express();
 
 // connect to MongoDB & listen for requests
 const dbURI =
-  "mongodb+srv://tejasst0544:spaces2024@spaces.x7z5doi.mongodb.net/?retryWrites=true&w=majority&appName=Spaces";
+  "mongodb+srv://tejasst0544:mongo2024@spaces2.dh91vuy.mongodb.net/?retryWrites=true&w=majority&appName=spaces2";
 
 mongoose
   .connect(dbURI)
@@ -20,6 +19,8 @@ mongoose
       console.log("Server is running on port 3000");
     });
     console.log("Connected to DB");
+
+
     Space.find({}, { img: 0 }).lean()
     .then(result => {
       console.log(JSON.stringify(result, null, 2));
@@ -27,6 +28,8 @@ mongoose
     .catch(err => {
       console.log(err);
     })
+
+    
   })
   .catch((err) => console.log(err));
 

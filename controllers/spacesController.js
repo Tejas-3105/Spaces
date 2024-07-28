@@ -4,6 +4,7 @@ const Space = require("../models/space");
 const spaces_index = (req, res) => {
   Space.find()
     .sort({ createdAt: -1 })
+    .allowDiskUse(true) // Enable disk usage for sorting
     .then((result) => {
       res.render("spaces/index", { spaces: result, title: "All Spaces" });
     })
@@ -65,7 +66,7 @@ const spaces_create_post = (req, res) => {
   space
     .save()
     .then((result) => {
-      res.json({ redirect: '/spaces' });
+      res.json({ redirect: "/spaces" });
     })
     .catch((err) => {
       console.log(err);
