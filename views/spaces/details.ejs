@@ -5,15 +5,27 @@
 
     <div class="spaces content">
       <h2><%= spaces.title %></h2>
-      <p><%= spaces.category %></p>
-      <p><%= spaces.description %></p>
-      <p><%= spaces.nearestBuilding %></p>
-      <p><%= spaces.type %></p>
-      <p><%= spaces.outlets %></p>
-      <p><%= spaces.capacity %></p>
-      <p><%= spaces.peak %></p>
-      <p><%= spaces.time1 %></p>
-      <p><%= spaces.time2 %></p>
+      <p>Category: <%= spaces.category %></p>
+      <br />
+      <p>
+        Description: <br />
+        <%= spaces.description %>
+      </p>
+      <br />
+      <p>Nearest Building: <%= spaces.nearestBuilding %></p>
+      <br />
+      <p>Type of Space: <%= spaces.type %></p>
+      <br />
+      <p>Number of Outlets: <%= spaces.outlets %></p>
+      <br />
+      <p>Estimated Capacity: <%= spaces.capacity %></p>
+      <br />
+      <p>
+        Peak Times: <%= spaces.peak %> from <%= spaces.time1 %> to <%=
+        spaces.time2 %>
+      </p>
+      <br />
+
       <button id="delete" data-doc="<%= spaces._id %>">Delete</button>
     </div>
     <%- include('../partials/footer.ejs') %>
