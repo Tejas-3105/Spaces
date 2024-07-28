@@ -20,8 +20,6 @@ mongoose
       console.log("Server is running on port 3000");
     });
     console.log("Connected to DB");
-      console.log(JSON.stringify(result, null, 2));
-      console.log(JSON.stringify(result, null, 2));
     Space.find({}, { img: 0 }).lean()
     .then(result => {
       console.log(JSON.stringify(result, null, 2));
