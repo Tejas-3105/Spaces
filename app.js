@@ -1,7 +1,9 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const spaceRoutes = require('./routes/spaceRoutes');
+const spaceRoutes = require("./routes/spaceRoutes");
+const bodyParser = require("body-parser");
+const multer = require("multer");
 
 // express app
 const app = express();
@@ -12,20 +14,26 @@ const dbURI =
 
 mongoose
   .connect(dbURI)
-  .then((result) => app.listen(3000))
+  .then((result) => {
+    app.listen(3000, () => {
+      console.log("Server is running on port 3000");
+    });
+    console.log("Connected to DB");
+  })
   .catch((err) => console.log(err));
-  console.log('Connected to DB');
 
 // register view engine
 app.set("view engine", "ejs");
 
 // middleware & static files
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(morgan("dev"));
-app.use((req, res, next) => {
-  res.locals.path = req.path;
-  next();
+
+// Configure multer for file uploads
+const upload = multer({ 
+  limits: { fileSize: 50 * 1024 * 1024 } // 50MB limit
 });
 
 // Routes
@@ -38,9 +46,11 @@ app.get("/about", (req, res) => {
 });
 
 // spaces routes
-app.use('/spaces', spaceRoutes);
+app.use("/spaces", upload.single('img'), spaceRoutes);
 
 // 404 page
 app.use((req, res) => {
   res.status(404).render("404", { title: "404" });
 });
+
+module.exports = app;

@@ -1,4 +1,3 @@
-const { ServerMonitoringMode } = require("mongodb");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -33,7 +32,7 @@ const spaceSchema = new Schema(
       required: true,
     },
     peak: {
-      type: String, // Only allow a single selection
+      type: String,
       required: true,
     },
     time1: {
@@ -43,6 +42,10 @@ const spaceSchema = new Schema(
     time2: {
       type: String,
       required: true,
+    },
+    img: {
+      data: String,
+      contentType: String,
     },
   },
   { timestamps: true }
