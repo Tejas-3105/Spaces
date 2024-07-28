@@ -85,6 +85,10 @@ footer {
   left: 0;
 }
 
+#spaces-title{
+  text-align: left;
+}
+
 .space-section {
   border: 2px solid #ffffff;
   border-radius: 8px;

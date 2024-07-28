@@ -5,14 +5,19 @@
 
     <div class="spaces content">
       <h1 align="center">Space Details</h1>
-      <h2 align="left"><%= spaces.title %></h2>
+      <h2 id="spaces-title" align="left"><%= spaces.title %></h2>
       <p> Category: <%= spaces.category %></p> <br>
-      <p> Description: <br> <%= spaces.description %></p> <br>
-      <p> Nearest Building: <%= spaces.nearestBuilding %></p> <br>
+      <p> Description: <br> <%= spaces.description %></p> 
+      <br>
+      <p> Nearest Building: <%= spaces.nearestBuilding %></p> 
+      <br>
       <p>Type of Space: <%= spaces.type %></p> <br>
-      <p>Number of Outlets: <%= spaces.outlets %></p> <br>
-      <p>Estimated Capacity: <%= spaces.capacity %></p> <br>
-      <p>Peak Times: <%= spaces.peak %> from <%= spaces.time1 %> to <%= spaces.time2 %> </p> <br>
+      <p>Number of Outlets: <%= spaces.outlets %></p> 
+      <br>
+      <p>Estimated Capacity: <%= spaces.capacity %></p> 
+      <br>
+      <p>Peak Times: <%= spaces.peak %> from <%= spaces.time1 %> to <%= spaces.time2 %> </p> 
+      <br>
       
       <button id="delete" data-doc="<%= spaces._id %>">Delete</button>
     </div>
