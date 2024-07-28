@@ -41,9 +41,14 @@ nav {
   border-bottom: 1px solid #ddd;
 }
 
+.logo-title {
+  white-space: nowrap;
+  display: inline;
+}
+
 .site-title a {
-  display: flex;
-  align-items: center;
+  display: absolute;
+  align-items: left;
   text-decoration: none;
 }
 
@@ -85,8 +90,16 @@ footer {
   left: 0;
 }
 
+.home-photo-detail {
+  max-height: 150px;
+}
+
 #spaces-title{
-  text-align: left;
+  text-align: center;
+}
+
+.nav-logo {
+  max-height: 50px
 }
 
 .space-section {
@@ -95,9 +108,16 @@ footer {
   border-color: rgba(255, 255, 255);
   background-color: rgba(240, 248, 255, 0.2);
   padding: 2%;
+  white-space: nowrap;
   transition: 0.3s ease;
-  overflow-y: auto;
+  max-width: 600px;
+  overflow-y: hidden;
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-content: center;
 }
+
+
 
 .grid {
   height: 800px;
@@ -160,7 +180,6 @@ footer {
   width: 100px;
   height: 20px;
   position: absolute;
-  background: linear-gradient(90deg, transparent, black);
   top: 18px;
   left: 70px;
 }
@@ -410,7 +429,7 @@ footer {
 
 .birkin {
   margin: 4px, 4px;
-  padding: 4px;
+  padding: 5%;
   width: auto;
   height: 500px;
   overflow-x: hidden;
@@ -434,7 +453,7 @@ footer {
 .space-section:hover {
   color: rgb(200, 223, 255);
   text-shadow: 1px 1px 2px rgb(254, 249, 249);
-  transform: translate(5px, 0px);
+  transform: translate(5px, -5px);
   box-shadow: -5px 5px 10px rgb(254, 249, 249);
 }
 

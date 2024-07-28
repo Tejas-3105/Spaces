@@ -5,27 +5,66 @@
 
     <div class="spaces content">
       <h1 align="center">Details about the Space</h1>
-      <br>
+      <br />
       <h2 id="spaces-title"><%= spaces.title %></h2>
-      <p> Category: <%= spaces.category %></p> <br>
-      <p> Description: <br> <%= spaces.description %></p> <br>
-      <p> Nearest Building: <%= spaces.nearestBuilding %></p> <br>
-      <p>Type of Space: <%= spaces.type %></p> <br>
-      <p>Number of Outlets: <%= spaces.outlets %></p> <br>
-      <p>Estimated Capacity: <%= spaces.capacity %></p> <br>
-      <p>Peak Times: <%= spaces.peak %> from <%= spaces.time1 %> to <%= spaces.time2 %> </p> <br>
-      
+      <p>Category: <%= spaces.category %></p>
+      <br />
+      <p>
+        Description: <br />
+        <%= spaces.description %>
+      </p>
+      <br />
+      <p>Nearest Building: <%= spaces.nearestBuilding %></p>
+      <br />
+      <p>Type of Space: <%= spaces.type %></p>
+      <br />
+      <p>Number of Outlets: <%= spaces.outlets %></p>
+      <br />
+      <p>Estimated Capacity: <%= spaces.capacity %></p>
+      <br />
+      <p>
+        Peak Times: <%= spaces.peak %> from <%= spaces.time1 %> to <%=
+        spaces.time2 %>
+      </p>
+      <br />
+
       <button id="delete" data-doc="<%= spaces._id %>">Delete</button>
-      
-      <div style="margin-top: 20px;">
-        <button id="like" data-doc="<%= spaces._id %>" style="background-color: #4CAF50; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 5px; transition: transform 0.2s;">
+
+      <div style="margin-top: 20px">
+        <button
+          id="like"
+          data-doc="<%= spaces._id %>"
+          style="
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.2s;
+          "
+        >
           👍 <span id="like-count">15</span>
         </button>
-        <button id="dislike" data-doc="<%= spaces._id %>" style="background-color: #f44336; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 5px; margin-left: 10px; transition: transform 0.2s;">
+        <button
+          id="dislike"
+          data-doc="<%= spaces._id %>"
+          style="
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: transform 0.2s;
+          "
+        >
           👎 <span id="dislike-count">1</span>
         </button>
       </div>
     </div>
+    <br />
     <%- include('../partials/footer.ejs') %>
   </body>
   <script>
@@ -50,20 +89,29 @@
     likeButton.addEventListener("click", (e) => {
       if (!likeButton.disabled) {
         likeCount.textContent = parseInt(likeCount.textContent) + 1;
-        likeButton.style.transform = 'scale(1.1)';
+        likeButton.style.transform = "scale(1.1)";
         setTimeout(() => {
-          likeButton.style.transform = 'scale(1)';
+          likeButton.style.transform = "scale(1)";
         }, 200);
-        
+
         likeButton.disabled = true; // Disable the like button after clicking
+        dislikeButton.disabled = true; // Disable the dislike button after clicking
+
+        likeButton.setAttribute(
+          "style",
+          "background-color: grey; color: white;"
+        );
+        dislikeButton.setAttribute(
+          "style",
+          "background-color: grey; color: white;"
+        );
 
         const endpoint = `/spaces/${e.target.dataset.doc}/like`;
         fetch(endpoint, {
           method: "POST",
-        })
-          .catch((err) => {
-            console.log(err);
-          });
+        }).catch((err) => {
+          console.log(err);
+        });
       }
     });
 
@@ -74,20 +122,29 @@
     dislikeButton.addEventListener("click", (e) => {
       if (!dislikeButton.disabled) {
         dislikeCount.textContent = parseInt(dislikeCount.textContent) + 1;
-        dislikeButton.style.transform = 'scale(1.1)';
+        dislikeButton.style.transform = "scale(1.1)";
         setTimeout(() => {
-          dislikeButton.style.transform = 'scale(1)';
+          dislikeButton.style.transform = "scale(1)";
         }, 200);
-        
+
+        likeButton.disabled = true; // Disable the like button after clicking
         dislikeButton.disabled = true; // Disable the dislike button after clicking
+
+        likeButton.setAttribute(
+          "style",
+          "background-color: grey; color: white;"
+        );
+        dislikeButton.setAttribute(
+          "style",
+          "background-color: grey; color: white;"
+        );
 
         const endpoint = `/spaces/${e.target.dataset.doc}/dislike`;
         fetch(endpoint, {
           method: "POST",
-        })
-          .catch((err) => {
-            console.log(err);
-          });
+        }).catch((err) => {
+          console.log(err);
+        });
       }
     });
   </script>

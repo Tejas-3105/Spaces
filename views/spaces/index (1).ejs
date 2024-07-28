@@ -15,7 +15,7 @@
       <div class="border"></div>
     
       <div id="main">
-        <input placeholder="AI search a space..." type="text" name="text" class="input" />
+        <input placeholder="Search..." type="text" name="text" class="input" />
         <div id="input-mask"></div>
         <div id="pink-mask"></div>
         <div class="filterBorder"></div>
@@ -85,10 +85,10 @@
         <div class="space-section">
           <a class="links" href="/spaces/<%= space._id %>">
             <h3 class="space-title"><%= space.title %></h3>
-            <p class="space-category"><%=space.category %></p>
-            <img src="<%= space.img.data %>" alt="<%= space.title %> image">
+            <p class="space-category"><%=space.category %></p><br>
+            <img class="home-photo-detail" src="<%= space.img.data %>" alt="<%= space.title %> image">
           </a>
-        </div><br>
+        </div>
       <% }); %>
     <% } else { %>
       <h3>We couldn't find any Spaces.</h3>
