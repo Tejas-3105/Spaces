@@ -1,0 +1,35 @@
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="spaces content">
+      <h2><%= spaces.title %></h2>
+      <p><%= spaces.category %></p>
+      <p><%= spaces.description %></p>
+      <p><%= spaces.nearestBuilding %></p>
+      <p><%= spaces.type %></p>
+      <p><%= spaces.outlets %></p>
+      <p><%= spaces.capacity %></p>
+      <p><%= spaces.peak %></p>
+      <p><%= spaces.time1 %></p>
+      <p><%= spaces.time2 %></p>
+      <button id="delete" data-doc="<%= spaces._id %>">Delete</button>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+  <script>
+    const button = document.getElementById("delete");
+    button.addEventListener("click", (e) => {
+      const endpoint = `/spaces/${e.target.dataset.doc}`;
+      fetch(endpoint, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => (window.location.href = data.redirect))
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  </script>
+</html>

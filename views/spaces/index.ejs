@@ -1,21 +1,29 @@
-<html lang="en">
-  <%- include('../partials/head.ejs') %>
+ <%- include('../partials/head.ejs') %>
   <body>
 
     <%- include('../partials/nav.ejs') %>
-
+    <div class="birkin">
     <div class="blogs content">
       <h2>All Spaces</h2>
       <% if (spaces.length > 0)  { %>
         <% spaces.forEach(space => { %>
-          <a class="single" href="/spaces/<%= space._id %>">
-            <h3><%= space.title %></h3>
-            <p><%=space.category %></p>
-          </a>
+          <div class="space-section">
+            <a class="links" href="/spaces/<%= space._id %>">
+              <h3 class="space-title"><%= space.title %></h3>
+              <p class="space-category"><%=space.category %></p>
+            </a>
+          </div><br>
         <% }); %>
       <% } else { %>
         <h3>We couldn't find any Spaces.</h3>
       <% } %>
+      </div>
+    </div>
+      <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
     </div>
     <%- include('../partials/footer.ejs') %>
   </body>

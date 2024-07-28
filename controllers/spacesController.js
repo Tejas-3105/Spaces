@@ -56,5 +56,5 @@ module.exports = {
   spaces_details,
   spaces_create_get,
   spaces_create_post,
-  spaces_delete,
+  spaces_delete
 };
