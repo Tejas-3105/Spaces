@@ -97,14 +97,11 @@
         likeButton.disabled = true; // Disable the like button after clicking
         dislikeButton.disabled = true; // Disable the dislike button after clicking
 
-        likeButton.setAttribute(
-          "style",
-          "background-color: grey; color: white;"
-        );
-        dislikeButton.setAttribute(
-          "style",
-          "background-color: grey; color: white;"
-        );
+        likeButton.style.backgroundColor = "grey";
+        likeButton.style.color = "white";
+
+        dislikeButton.style.backgroundColor = "grey";
+        dislikeButton.style.color = "white";
 
         const endpoint = `/spaces/${e.target.dataset.doc}/like`;
         fetch(endpoint, {
@@ -130,14 +127,11 @@
         likeButton.disabled = true; // Disable the like button after clicking
         dislikeButton.disabled = true; // Disable the dislike button after clicking
 
-        likeButton.setAttribute(
-          "style",
-          "background-color: grey; color: white;"
-        );
-        dislikeButton.setAttribute(
-          "style",
-          "background-color: grey; color: white;"
-        );
+        likeButton.style.backgroundColor = "grey";
+        likeButton.style.color = "white";
+
+        dislikeButton.style.backgroundColor = "grey";
+        dislikeButton.style.color = "white";
 
         const endpoint = `/spaces/${e.target.dataset.doc}/dislike`;
         fetch(endpoint, {
